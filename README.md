@@ -28,22 +28,13 @@ mkdir -p <项目>/.opencode/skills/cmyk-to-rgb
 cp -R cmyk-to-rgb/SKILL.md cmyk-to-rgb/convert.mjs cmyk-to-rgb/package*.json <项目>/.opencode/skills/cmyk-to-rgb/
 ```
 
-### 方式三：任意目录 + `skills.paths`
+### 方式三：让 opencode agent 自动安装（推荐）
 
-clone 到任意位置，在 `opencode.json` 里指向它。**注意**：目标目录名需为 `cmyk-to-rgb`（opencode 要求 skill 名与所在目录名一致），且该目录中要有 `SKILL.md`：
+配合全局 agent **`install-cmyk-skill`**（位于 `~/.config/opencode/agent/install-cmyk-skill.md`），在 opencode 里直接对 agent 说：
 
-```bash
-git clone https://github.com/kyo4311/opencode-skill-cmyk-to-rgb.git ~/skills/cmyk-to-rgb
-```
+> 把 https://github.com/kyo4311/opencode-skill-cmyk-to-rgb 安装在本项目，并安装相关依赖。
 
-```json
-{
-  "$schema": "https://opencode.ai/config.json",
-  "skills": {
-    "paths": ["~/skills/cmyk-to-rgb"]
-  }
-}
-```
+agent 会自动完成：clone → 解析 skill 名 → 复制到 `.opencode/skills/cmyk-to-rgb/` → `npm install` → 验证 `convert.mjs --help` → 清理临时目录。想装到全局就说「装到全局」。
 
 ### 安装依赖
 
