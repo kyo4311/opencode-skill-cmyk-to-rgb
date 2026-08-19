@@ -9,10 +9,10 @@ description: 将 CMYK 色彩空间的图片（JPEG 等 4 通道图）转换为 R
 
 ## 前置条件
 
-- 本机需要 `node`（≥18）且 skill 目录下已安装 `sharp`。若缺少依赖：
+- 本机需要 `node`（≥18）。skill 目录随仓库自带了 `package.json`，安装依赖：
 
   ```bash
-  npm init -y >/dev/null && npm install sharp
+  npm install
   ```
 
 ## 使用步骤
