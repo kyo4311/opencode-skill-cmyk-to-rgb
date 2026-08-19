@@ -28,7 +28,7 @@ cp -R cmyk-to-rgb/. <你的项目>/.opencode/skills/cmyk-to-rgb/
 }
 ```
 
-> 依赖：skill 目录内置了 `sharp` 的 `node_modules`，clone 后即开即用；如需重装依赖，在 skill 目录执行 `npm install`。
+> 依赖：仓库**不内置** `node_modules`（已 gitignore，按平台/架构区分，不应入库）。clone 后需在 skill 目录执行一次 `npm install` 安装 `sharp`。
 
 安装后需重启 opencode 生效。
 
